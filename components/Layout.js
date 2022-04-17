@@ -6,7 +6,7 @@ import Navbar from './Navbar'
 
 
 export default function Layout(props) {
-    const { title } = props
+    const { title, addClass } = props
     return (
         <>
             <Head>
@@ -22,9 +22,10 @@ export default function Layout(props) {
                     crossOrigin="anonymous" />
             </Head>
             <Navbar />
-            <main className={`container`}>
-
-                {props.children}
+            <main>
+                <div className={addClass ? addClass : `container`}>
+                    {props.children}
+                </div>
             </main>
             <Footer />
         </>

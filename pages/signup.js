@@ -1,14 +1,9 @@
 import Layout from "../components/Layout";
-import Link from 'next/link';
 import SignupForm from "../components/SignupForm";
-
 export default function Signup() {
     return (
-        <Layout title="Signup">
+        <Layout title="Signup" addClass='body'>
             <SignupForm />
-            {/* <Link href="/login">
-                <a><p>Have a already account</p></a>
-            </Link> */}
         </Layout>
     )
 }

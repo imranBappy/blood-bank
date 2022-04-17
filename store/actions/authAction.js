@@ -1,17 +1,14 @@
-import axios from 'axios';
 import * as Types from './types';
 import '../firebase';
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 import {
     createUserWithEmailAndPassword,
     getAuth,
-    onAuthStateChanged,
     sendPasswordResetEmail,
     signInWithEmailAndPassword,
     signOut,
     updateProfile,
 } from "firebase/auth";
-// import setAuthHeader from '../../utils/setAuthHeader';
 export const registerAction = ({ name, email, password, ...rest }, history) => async dispatch => {
     try {
         const auth = getAuth();

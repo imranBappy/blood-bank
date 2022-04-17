@@ -1,8 +1,262 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+}
+
+.error {
+    color: rgb(211, 0, 0);
+    margin-top: -4px;
+}
+
+.body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/images/signup_bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.wrapper {
+    margin: 0 auto;
+    position: relative;
+    max-width: 430px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    padding: 34px;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+.wrapper .h2 {
+    position: relative;
+    font-size: 22px;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+}
+
+.wrapper .h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 28px;
+    border-radius: 12px;
+    background: #d9330d;
+}
+
+.wrapper .form {
+    margin-top: 30px;
+}
+
+.wrapper .form .input__box {
+    height: 52px;
+    margin: 22px 0;
+}
+
+form .input__box .input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding: 0 15px;
+    font-size: 17px;
+    font-weight: 400;
+    color: #000;
+    border: 1.5px solid #C7BEBE;
+    border-bottom-width: 2.5px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    background: aliceblue;
+}
+
+.input__box .input:focus,
+.input__box .input:valid {
+    border-color: #ff0000;
+}
+
+.form .policy {
+    display: flex;
+    align-items: center;
+}
+
+.form .h3 {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+.input__box.button .input {
+    color: #fff;
+    letter-spacing: 1px;
+    border: none;
+    background: #d21c13;
+    cursor: pointer;
+}
+
+.input__box.button .input:hover {
+    background: #ca692d;
+}
+
+.form .text .h3 {
+    color: #fff;
+    width: 100%;
+    text-align: center;
+}
+
+.form .text .h3 .a {
+    color: #f45e40;
+    text-decoration: none;
+}
+
+.form .text .h3 .a:hover {
+    text-decoration: underline;
+}
+
+.select {
+    height: 50px;
+    width: 100%;
+    background: aliceblue;
+    border-radius: 5px;
+    border: 2px solid rgba(112, 112, 112, 0.40);
+    font-weight: 500;
+    font-size: 17px;
+    color: #000;
+
+}
+
+.select .option {
+    color: #000;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.select:focus,
+.select .option:valid {
+    border-color: #ff0000;
+}
+
+/* login */
+
+
+
+
+
+
+
+
+
+.wrapper {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 5px;
+    box-shadow: 7px 7px 40px rgba(243, 9, 9, 0.30);
+}
+
+.wrapper .title {
+    line-height: 50px;
+    background: rgb(227, 6, 6);
+    color: #fff;
+    padding-left: 20px;
+    border-radius: 5px 5px 0 0;
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.form {
+    padding: 30px 25px 25px 25px;
+}
+
+.row {
+    height: 45px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.row__input {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid rgb(99, 90, 90);
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.row__input:focus {
+    border-color: #ff0000;
+    box-shadow: inset 0px 0px 2px 2px rgba(243, 9, 9, 0.30);
+}
+
+.row__icon {
+    position: absolute;
+    width: 47px;
+    height: 100%;
+    background: rgb(161, 12, 12);
+    border: 1px solid #ff0000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border-radius: 5px 0 0 5px;
+}
+
+.showHidePw {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+}
+
+.button .row__input {
+    padding-left: 0px;
+    background: red;
+    color: #fff;
+    cursor: pointer;
+    border: 1px solid red;
+    font-weight: 500;
+    font-size: 20spx;
+}
+
+.button .row__input:hover {
+    background: #af1515;
+}
+
+.pass {
+    margin: -8px 0 20px 0;
+}
+
+.pass .a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.pass .a:hover {
+    text-decoration: underline;
+}
+
+.signup {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.signup .a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.signup .a:hover {
+    text-decoration: underline;
 }

@@ -24,6 +24,7 @@ const SignupForm = (props) => {
         e.preventDefault()
         props.registerAction(user);
     }
+
     return (
         <Form>
             <div><input onChange={handleChange} placeholder="Name" name="name" type="text" required /></div>

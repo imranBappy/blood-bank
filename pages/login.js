@@ -5,11 +5,9 @@ import { connect } from 'react-redux';
 import { loginAction } from '../store/actions/authAction';
 const login = (props) => {
     const [user, setUser] = useState({
-        phone: "",
+        email: "",
         password: "",
     });
-
-
     const handleChange = e => {
         const name = e.target.name, value = e.target.value;
         setUser({ ...user, [name]: value })
@@ -25,7 +23,7 @@ const login = (props) => {
                     <div className="my-5 row">
                         <label htmlFor="staticEmail" className="col-sm-2 col-form-label">Phone</label>
                         <div className="col-sm-10">
-                            <input name="phone" onChange={handleChange} className="form-control" type="text" className="form-control" id="staticEmail" />
+                            <input name="email" onChange={handleChange} className="form-control" type="email" className="form-control" id="staticEmail" />
                         </div>
                     </div>
                     <div className="mb-3 row">
@@ -46,7 +44,4 @@ const login = (props) => {
     );
 };
 
-const mapStateToProps = state => ({
-    user: {}
-})
-export default connect(mapStateToProps, { loginAction })(login);
+export default connect(null, { loginAction })(login);

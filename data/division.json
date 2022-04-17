@@ -1,0 +1,72 @@
+[
+    {
+        "division": "Barishal",
+        "allZila": [
+            {
+                "zila": "Pirojpur",
+                "allUpazila": [
+                    {
+                        "upazila": "Mathbaria"
+                    },
+                    {
+                        "upazila": "Banaripara"
+                    },
+                    {
+                        "upazila": "Bhandaria"
+                    },
+                    {
+                        "upazila": "kaukhali"
+                    },
+                    {
+                        "upazila": "Nazirpur"
+                    },
+                    {
+                        "upazila": "Pirojpur Sadar"
+                    },
+                    {
+                        "upazila": "Swarupkathi"
+                    }
+                ]
+            },
+            {
+                "zila": "Barguna"
+            },
+            {
+                "zila": "Barishal"
+            },
+            {
+                "zila": "Bhola"
+            },
+            {
+                "zila": "Jhalokathi"
+            },
+            {
+                "zila": "Patuakhali"
+            },
+            {
+                "zila": "Patuakhali"
+            }
+        ]
+    },
+    {
+        "division": "Chattogram"
+    },
+    {
+        "division": "Dhaka"
+    },
+    {
+        "division": "Khulna"
+    },
+    {
+        "division": "Rajshahi"
+    },
+    {
+        "division": "Rangpur"
+    },
+    {
+        "division": "Mymensingh"
+    },
+    {
+        "division": "Sylhet"
+    }
+]

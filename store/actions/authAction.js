@@ -1,34 +1,62 @@
 import axios from 'axios';
 import * as Types from './types';
+import '../firebase';
+import { addDoc, collection, getFirestore } from "firebase/firestore";
+import {
+    createUserWithEmailAndPassword,
+    getAuth,
+    onAuthStateChanged,
+    sendPasswordResetEmail,
+    signInWithEmailAndPassword,
+    signOut,
+    updateProfile,
+} from "firebase/auth";
 // import setAuthHeader from '../../utils/setAuthHeader';
-// export const registerAction = (user, history) => async dispatch => {
-//     try {
-//         user.username = user.username.toLocaleLowerCase()
-//         const result = await axios.post('https://b24win.herokuapp.com/user/register', user);
-//         dispatch({
-//             type: Types.SET_ALERT,
-//             payload: {
-//                 message: result.data.message ? result.data.message : '',
-//                 error: result.data.error ? true : false
-//             }
-//         })
-
-//         if (!result.data.error) {
-//             history.push('/login');
-//         }
-//     } catch (err) {
-//         dispatch({
-//             type: Types.SET_ALERT,
-//             payload: { message: 'Server side error', error: true },
-//         });
-//     }
-// };
-
-export const loginAction = (user, history) => async dispatch => {
+export const registerAction = ({ name, email, password, ...rest }, history) => async dispatch => {
     try {
-        // const result = await axios.post('https://b24win.herokuapp.com/user/login', user);
+        const auth = getAuth();
+        const db = getFirestore();
+        const signup = async () => {
+            await createUserWithEmailAndPassword(auth, email, password);
+            await updateProfile(auth.currentUser, {
+                displayName: name,
+            });
+            const user = auth.currentUser;
+            const _id = auth.currentUser.uid;
+            const docRef = await addDoc(collection(db, "users"), {
+                _id,
+                ...rest
+            });
+            dispatch({
+                type: Types.SET_USER,
+                payload: {
+                    auth: true,
+                    user: user,
+                    token: 'token'
+                }
+            })
+            console.log(docRef);
+            console.log(user);
+        };
+        await signup();
+
+
+    } catch (err) {
+        console.log({
+            err
+        });
+        //         dispatch({
+        //             type: Types.SET_ALERT,
+        //             payload: { message: 'Server side error', error: true },
+        //         });
+    }
+};
+
+export const loginAction = ({ name, email, password, ...rest }, history) => async dispatch => {
+    try {
+
         // const token = result.data.token;
-        console.log(user);
+
         // if (token) {
         //     localStorage.setItem('token', token)
         //     setAuthHeader(token)
@@ -47,15 +75,16 @@ export const loginAction = (user, history) => async dispatch => {
         //         error: result.data.error
         //     }
         // })
-        dispatch({
-            type: Types.SET_USER,
-            payload: {
-                auth: true,
-                user: user,
-                token: 'token'
-            }
-        })
-        history.push('/');
+
+        // history.push('/');
+        // dispatch({
+        //     type: Types.SET_USER,
+        //     payload: {
+        //         auth: true,
+        //         user: user,
+        //         token: 'token'
+        //     }
+        // })
     } catch (error) {
         dispatch({
             type: Types.SET_ALERT,

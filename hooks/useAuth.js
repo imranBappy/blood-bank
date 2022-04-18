@@ -11,15 +11,18 @@ const useAuth = () => {
     const db = getFirestore();
     useEffect(() => {
         const getUser = async () => {
-            onAuthStateChanged(auth, async ({ accessToken, displayName, email, uid }) => {
-                const data = {}
-                data = { accessToken, displayName, email, uid }
-                const stateQuery = query(collection(db, "users"), where("_id", "==", uid));
-                const docSnap = await getDocs(stateQuery);
-                docSnap.forEach(u => {
-                    data = { ...data, ...u.data() }
-                })
-                setUser(data)
+            let data = {}
+            const unsubscribe = onAuthStateChanged(auth, async (user) => {
+                // const { accessToken, displayName, email, uid } = user;
+                // data = { accessToken, displayName, email, uid }
+                // const stateQuery = query(collection(db, "users"), where("_id", "==", uid));
+                // const docSnap = await getDocs(stateQuery);
+                // docSnap.forEach(u => {
+                //     data = { ...data, ...u.data() }
+                // })
+                setUser(user)
+
+                return unsubscribe
             });
         };
         getUser();

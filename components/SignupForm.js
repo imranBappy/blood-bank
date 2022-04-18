@@ -2,7 +2,9 @@ import { connect } from 'react-redux';
 import { registerAction } from '../store/actions/authAction';
 import Link from 'next/link';
 import InputFiled from "./InputFiled";
+
 const SignupForm = ({ inputFled, register, handleSubmit, onSubmit, errors }) => {
+
     return (
         <div className="wrapper">
             <h2 className="h2">Registration</h2>

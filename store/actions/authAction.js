@@ -11,7 +11,6 @@ import {
 } from "firebase/auth";
 export const registerAction = ({ name, email, password, ...rest }, router) => async dispatch => {
     try {
-
         const auth = getAuth();
         const db = getFirestore();
         const signup = async () => {
@@ -40,8 +39,9 @@ export const loginAction = ({ email, password }, history) => async dispatch => {
     try {
         const auth = getAuth();
         const user = await signInWithEmailAndPassword(auth, email, password);
-        console.log({ email, password });
-        console.log(user.user);
+        console.log(user);
+        history.push("/donor")
+        // console.log(user.user);
         // const unsubscribe = onAuthStateChanged(auth, (user) => {
         //     setCurrentUser(user);
         //     setLoading(false);
@@ -89,28 +89,20 @@ export const loginAction = ({ email, password }, history) => async dispatch => {
 
 export const logoutAction = () => dispatch => {
     const auth = getAuth();
-
     signOut(auth);
-
-    //     const token = localStorage.getItem('token')
-    //     if (token) {
-    //         localStorage.removeItem('token');
-    //     }
-    //     dispatch({
-    //         type: Types.SET_USER,
-    //         payload: {
-    //             auth: false,
-    //             user: {},
-    //             token: ''
-    //         }
-    //     })
-    //     dispatch({
-    //         type: Types.SET_ALERT,
-    //         payload: {
-    //             message: 'Logout successfully',
-    //             error: false
-    //         }
-    //     })
+    dispatch({
+        type: Types.SET_USER,
+        payload: {
+            user: null,
+        }
+    })
+    dispatch({
+        type: Types.SET_ALERT,
+        payload: {
+            message: 'Logout successfully',
+            error: false
+        }
+    })
 }
 export const changePassAction = (user) => async dispatch => {
     try {

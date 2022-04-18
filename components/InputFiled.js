@@ -1,11 +1,16 @@
 import React from 'react';
+import { useContext } from 'react';
+import { LoadContext } from './Layout';
 const InputFiled = (props) => {
     const { register, option, require, inputType, name, ...rest } = props.data
+    const [loading] = useContext(LoadContext)
     return inputType === "input" ? <div className="input__box">
         <input {...props.register(name, require)} className="input" {...rest} required />
-        {props.errors[name] && <p className="error">
-            {props.errors[name].message ? props.errors[name].message : "Required"}
-        </p>}
+        {
+            props.errors[name] && <p className="error">
+                {props.errors[name].message ? props.errors[name].message : "Required"}
+            </p>
+        }
     </div> :
         inputType === "select" ?
             <div className="input__box">
@@ -19,9 +24,8 @@ const InputFiled = (props) => {
                 <h3 className="h3">I accept all terms & condition</h3>
             </div> : inputType === "submit" ?
                 <div className="input__box button">
-                    <input className="input" type="Submit" defaultValue="Register Now" />
+                    <input className="input" type={loading ? "Loading..." : "Signup"} defaultValue="Register Now" />
                 </div> :
                 ""
 };
-
 export default InputFiled;

@@ -1,6 +1,11 @@
 /* eslint-disable react/no-unknown-property */
 import Link from 'next/link'
-const Navbar = () => {
+import { connect } from 'react-redux';
+import { logoutAction } from '../store/actions/authAction';
+const Navbar = (props) => {
+    const logout = () => {
+        props.logoutAction()
+    }
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -14,7 +19,7 @@ const Navbar = () => {
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                                <Link href="/">
+                                <Link href="/donor">
                                     <a className="nav-link">Donor</a>
                                 </Link>
                             </li>
@@ -24,9 +29,13 @@ const Navbar = () => {
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link href="/login">
-                                    <a className="nav-link">Join</a>
+                                {props.user ? <Link href="/">
+                                    <a className="nav-link"> ( {props.user.displayName} ) <span onClick={logout}>Logout</span> </a>
                                 </Link>
+                                    : <Link href="/login">
+                                        <a className="nav-link">Join</a>
+                                    </Link>}
+
                             </li>
                         </ul>
                     </div>
@@ -35,5 +44,7 @@ const Navbar = () => {
         </>
     );
 };
-
-export default Navbar;
+const mapStateToProps = (state) => ({
+    user: state.auth.user
+})
+export default connect(mapStateToProps, { logoutAction })(Navbar);

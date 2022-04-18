@@ -3,12 +3,19 @@ import Layout from '../components/Layout';
 import { connect } from 'react-redux';
 import { loginAction } from '../store/actions/authAction';
 import SiginForm from '../components/SiginForm';
-const login = (props) => {
+import { useForm } from 'react-hook-form';
+import { useRouter } from 'next/router'
 
+const login = (props) => {
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const router = useRouter()
+    const onSubmit = (data) => {
+        props.loginAction(data, router)
+    }
     return (
         <>
             <Layout title="Login" addClass="body">
-                <SiginForm />
+                <SiginForm register={register} errors={errors} onSubmit={onSubmit} handleSubmit={handleSubmit} />
             </Layout>
         </>
     );

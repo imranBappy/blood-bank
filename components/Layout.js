@@ -1,12 +1,13 @@
 /* eslint-disable react/no-unknown-property */
 import Head from 'next/head'
+import { createContext, useState } from 'react'
 import Footer from './Footer'
 import Navbar from './Navbar'
 // import '../styles/globals.css'
+export const LoadContext = createContext()
 
-
-export default function Layout(props) {
-    const { title, addClass } = props
+export default function Layout({ title, addClass, children, ...rest }) {
+    const [loading, setLoading] = useState(false)
     return (
         <>
             <Head>
@@ -24,7 +25,9 @@ export default function Layout(props) {
             <Navbar />
             <main>
                 <div className={addClass ? addClass : `container`}>
-                    {props.children}
+                    <LoadContext.Provider value={[loading, setLoading]}>
+                        {children}
+                    </LoadContext.Provider>
                 </div>
             </main>
             <Footer />

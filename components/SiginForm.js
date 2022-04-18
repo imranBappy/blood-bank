@@ -1,24 +1,21 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useForm } from "react-hook-form";
-const SiginForm = () => {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => {
-        console.log(data);
-    };
+const SiginForm = ({ register, handleSubmit, onSubmit, errors }) => {
+
 
     return (
         <div className="container">
             <div className="wrapper">
                 <div className="title"><span>Login Form</span></div>
                 <form onSubmit={handleSubmit(onSubmit)} className="form" action="#">
-                    <div className="row">
+                    <div className="input_row">
                         <i className="uil uil-phone row__icon"></i>
                         <input {...register("email", { required: true })} className="row__input" type="email" placeholder="Enter your email" />
                     </div>
-                    <div className="row">
+                    <div className="input_row">
                         <i className="uil uil-lock row__icon"></i>
-                        <input {...register("password", { required: true })} className="row__input password" type="password" placeholder="Enter your password" />
+                        <input {...register("password", { required: true, minLength: 5 })} className="row__input password" type="password" placeholder="Enter your password" />
                         <i className="uil uil-eye-slash showHidePw"></i>
                     </div>
                     <div className="pass">

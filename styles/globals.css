@@ -55,12 +55,12 @@
 }
 
 .wrapper .form {
-    margin-top: 30px;
+    margin-top: -25px;
 }
 
 .wrapper .form .input__box {
-    height: 52px;
-    margin: 22px 0;
+    height: 45px;
+    margin: 20px 0;
 }
 
 form .input__box .input {
@@ -123,7 +123,7 @@ form .input__box .input {
 }
 
 .select {
-    height: 50px;
+    height: 45px;
     width: 100%;
     background: aliceblue;
     border-radius: 5px;

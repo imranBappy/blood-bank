@@ -1,0 +1,140 @@
+[
+    {
+        "name": "name",
+        "placeholder": "Enter your name",
+        "type": "text",
+        "inputType": "input",
+        "require": {
+            "required": true,
+            "minLength": 5
+        }
+    },
+    {
+        "name": "email",
+        "placeholder": "Enter your email",
+        "type": "email",
+        "inputType": "input",
+        "require": {
+            "required": true,
+            "minLength": 8,
+            "maxLength": 35
+        }
+    },
+    {
+        "name": "phone",
+        "placeholder": "Enter your phone (+880)",
+        "type": "text",
+        "inputType": "input",
+        "require": {
+            "required": true,
+            "minLength": 10,
+            "maxLength": 13
+        }
+    },
+    {
+        "name": "age",
+        "placeholder": "Enter your age",
+        "type": "number",
+        "inputType": "input",
+        "require": {
+            "required": true,
+            "min": 18,
+            "max": 55
+        }
+    },
+    {
+        "inputType": "select",
+        "name": "division",
+        "require": {
+            "required": true
+        },
+        "option": [
+            "Choose...",
+            "Khulna",
+            "Barisal"
+        ]
+    },
+    {
+        "inputType": "select",
+        "name": "zila",
+        "require": {
+            "required": true
+        },
+        "option": [
+            "Choose...",
+            "Pirojpur",
+            "Bola"
+        ]
+    },
+    {
+        "inputType": "select",
+        "name": "upazila",
+        "require": {
+            "required": true
+        },
+        "option": [
+            "Choose...",
+            "Mathbaria",
+            "Bandaria"
+        ]
+    },
+    {
+        "inputType": "select",
+        "name": "gender",
+        "require": {
+            "required": true
+        },
+        "option": [
+            "Choose..",
+            "Male",
+            "Female"
+        ]
+    },
+    {
+        "inputType": "select",
+        "name": "blood",
+        "require": {
+            "required": true
+        },
+        "option": [
+            "Choose Blood Group..",
+            "A+",
+            "B+"
+        ]
+    },
+    {
+        "name": "password",
+        "placeholder": "Enter your password",
+        "type": "password",
+        "inputType": "input",
+        "require": {
+            "required": true,
+            "minLength": 10,
+            "maxLength": 13
+        }
+    },
+    {
+        "name": "confirmPassword",
+        "placeholder": "Enter your Confirm password",
+        "type": "password",
+        "inputType": "input",
+        "require": {
+            "required": true,
+            "minLength": 10,
+            "maxLength": 13
+        }
+    },
+    {
+        "name": "agreed",
+        "type": "input",
+        "inputType": "checkbox",
+        "require": {
+            "required": true
+        }
+    },
+    {
+        "name": "Sunmit",
+        "type": "Signup",
+        "inputType": "submit"
+    }
+]

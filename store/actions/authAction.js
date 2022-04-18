@@ -9,8 +9,9 @@ import {
     signOut,
     updateProfile,
 } from "firebase/auth";
-export const registerAction = ({ name, email, password, ...rest }, history) => async dispatch => {
+export const registerAction = ({ name, email, password, ...rest }, router) => async dispatch => {
     try {
+
         const auth = getAuth();
         const db = getFirestore();
         const signup = async () => {
@@ -25,6 +26,7 @@ export const registerAction = ({ name, email, password, ...rest }, history) => a
             });
         };
         await signup();
+        router.push('/login')
 
     } catch (err) {
         dispatch({

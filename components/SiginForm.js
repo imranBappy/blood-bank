@@ -21,7 +21,7 @@ const SiginForm = ({ register, handleSubmit, onSubmit, errors }) => {
                     <div className="pass">
                         <Link href="/reset"><a className="a">Forget Password?</a></Link>
                     </div>
-                    {errors.password && <span>This field is required</span>}
+                    {errors.password && <span className="error">This field is required</span>}
                     <div className="row button">
                         <input className="row__input" type="submit" value="Login" />
                     </div>

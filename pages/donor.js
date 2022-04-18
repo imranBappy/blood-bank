@@ -7,7 +7,7 @@ const donor = (props) => {
     const router = useRouter()
     if (!props.user) {
         router.push("/")
-        return;
+        return <h1>Loading</h1>;
     }
     return (
         <>

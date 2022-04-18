@@ -6,11 +6,13 @@ import '../styles/globals.css';
 import { useEffect } from 'react';
 function MyApp({ Component, pageProps }) {
   const user = useAuth();
+  console.log(user);
+  const { displayName, email, uid } = user || {};
   useEffect(() => {
     store.dispatch({
       type: 'SET_USER',
       payload: {
-        user,
+        user: user ? { displayName, email, uid } : null,
       }
     })
   }, [])

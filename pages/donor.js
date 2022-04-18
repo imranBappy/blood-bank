@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import Layout from '../components/Layout';
 import { useRouter } from 'next/router'
 
-const donor = (props) => {
+const Donor = (props) => {
     const router = useRouter()
-    if (!props.user) {
+    if (!props.user.displayName) {
         router.push("/")
         return <h1>Loading</h1>;
     }
@@ -20,4 +20,4 @@ const donor = (props) => {
 const mapStateToProps = state => ({
     user: state.auth.user
 })
-export default connect(mapStateToProps)(donor);
+export default connect(mapStateToProps)(Donor);

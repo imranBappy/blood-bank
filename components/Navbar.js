@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { connect } from 'react-redux';
 import { logoutAction } from '../store/actions/authAction';
 const Navbar = (props) => {
+    const { displayName } = props.user || {}
     const logout = () => {
         props.logoutAction()
     }
@@ -29,13 +30,12 @@ const Navbar = (props) => {
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                {props.user ? <Link href="/">
-                                    <a className="nav-link"> ( {props.user.displayName} ) <span onClick={logout}>Logout</span> </a>
+                                {props.user.displayName ? <Link href="/">
+                                    <a className="nav-link"> ( {displayName} ) <span onClick={logout}>Logout</span> </a>
                                 </Link>
                                     : <Link href="/login">
                                         <a className="nav-link">Join</a>
                                     </Link>}
-
                             </li>
                         </ul>
                     </div>

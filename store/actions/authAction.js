@@ -67,14 +67,15 @@ export const loginAction = ({ email, password }, history) => async dispatch => {
         // })
 
         // history.push('/');
-        // dispatch({
-        //     type: Types.SET_USER,
-        //     payload: {
-        //         auth: true,
-        //         user: user,
-        //         token: 'token'
-        //     }
-        // })
+        const { displayName, uid } = user.user || {};
+        dispatch({
+            type: Types.SET_USER,
+            payload: {
+                user: {
+                    displayName, email, uid
+                },
+            }
+        })
     } catch (error) {
         console.log(error);
         // dispatch({
@@ -93,7 +94,7 @@ export const logoutAction = () => dispatch => {
     dispatch({
         type: Types.SET_USER,
         payload: {
-            user: null,
+            user: {},
         }
     })
     dispatch({

@@ -6,7 +6,7 @@ import SiginForm from '../components/SiginForm';
 import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router'
 
-const login = (props) => {
+const Login = (props) => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const router = useRouter()
     const onSubmit = (data) => {
@@ -21,4 +21,4 @@ const login = (props) => {
     );
 };
 
-export default connect(null, { loginAction })(login);
+export default connect(null, { loginAction })(Login);

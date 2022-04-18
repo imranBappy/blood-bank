@@ -22,7 +22,6 @@ const InputFiled = (props) => {
                     <input className="input" type="Submit" defaultValue="Register Now" />
                 </div> :
                 ""
-
 };
 
 export default InputFiled;

@@ -40,7 +40,7 @@ export const loginAction = ({ email, password }, history) => async dispatch => {
         const auth = getAuth();
         const user = await signInWithEmailAndPassword(auth, email, password);
         console.log(user);
-        history.push("/donor")
+        // history.push("/donor")
         // console.log(user.user);
         // const unsubscribe = onAuthStateChanged(auth, (user) => {
         //     setCurrentUser(user);

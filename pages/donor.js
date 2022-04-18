@@ -4,9 +4,9 @@ import Layout from '../components/Layout';
 import { useRouter } from 'next/router'
 
 const Donor = (props) => {
-    const router = useRouter()
+    // const router = useRouter()
     if (!props.user.displayName) {
-        router.push("/")
+        // router.push("/")
         return <h1>Loading</h1>;
     }
     return (

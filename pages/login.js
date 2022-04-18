@@ -8,7 +8,7 @@ import { useRouter } from 'next/router'
 
 const Login = (props) => {
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const router = useRouter()
+    // const router = useRouter()
     const onSubmit = (data) => {
         props.loginAction(data, router)
     }

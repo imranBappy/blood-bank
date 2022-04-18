@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useForm } from "react-hook-form";
-const SiginForm = ({ register, handleSubmit, onSubmit, errors }) => {
-
-
+import { useRouter } from 'next/router'
+import { loginAction } from '../store/actions/authAction';
+import { connect } from 'react-redux';
+const SiginForm = (props) => {
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const router = useRouter()
+    const onSubmit = (data) => {
+        props.loginAction(data, router)
+    }
     return (
         <div className="container">
             <div className="wrapper">
@@ -34,4 +40,4 @@ const SiginForm = ({ register, handleSubmit, onSubmit, errors }) => {
     );
 };
 
-export default SiginForm;
+export default connect(null, { loginAction })(SiginForm);

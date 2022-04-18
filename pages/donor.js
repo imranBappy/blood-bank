@@ -1,23 +1,16 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import DonorList from '../components/DonorList';
 import Layout from '../components/Layout';
-import { useRouter } from 'next/router'
 
-const Donor = (props) => {
-    // const router = useRouter()
-    if (!props.user.displayName) {
-        // router.push("/")
-        return;
-    }
+const donor = (props) => {
+
     return (
         <>
-            <Layout title="Blood Donor">
-                Blood Donor
+            <Layout title="Blood d">
+                <DonorList />
             </Layout>
         </>
     );
 };
-const mapStateToProps = state => ({
-    user: state.auth.user
-})
-export default connect(mapStateToProps)(Donor);
+
+export default donor;

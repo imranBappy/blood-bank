@@ -1,12 +1,13 @@
 /* eslint-disable react/no-unknown-property */
+import { logEvent } from 'firebase/analytics'
 import Head from 'next/head'
 import { createContext, useState } from 'react'
 import Footer from './Footer'
 import Navbar from './Navbar'
-// import '../styles/globals.css'
 export const LoadContext = createContext()
-export default function Layout({ title, addClass, children, ...rest }) {
+function Layout({ title, addClass, children, ...rest }) {
     const [loading, setLoading] = useState(false)
+
     return (
         <>
             <Head>
@@ -33,3 +34,4 @@ export default function Layout({ title, addClass, children, ...rest }) {
         </>
     )
 }
+export default Layout;

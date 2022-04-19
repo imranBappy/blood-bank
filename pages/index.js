@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import Layout from '../components/Layout'
-import Image from 'next/image'
 
 export default function Home() {
+
 
   const slider = [{
     key: "029834m3j2",

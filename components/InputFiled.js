@@ -14,11 +14,18 @@ const InputFiled = (props) => {
     </div> :
         inputType === "select" ?
             <div className="input__box">
-                <select {...props.register(name, require)} className="select" required>
+                {/* <select {...props.register(name, require)} className="select" required>
                     {
                         option.map((op, i) => <option key={i} className="option" value={i === 0 ? "" : op}>{op}</option>)
                     }
-                </select>
+                </select> */}
+                <input placeholder={props.data.placeholder} className="input"
+                    {...props.register(name, require)} list={props.data.name} name={props.data.name} id={props.data.name} />
+                <datalist id={props.data.name} {...props.register(name, require)} >
+                    {
+                        option.map((op, i) => <option key={i} className="option" value={op}>{op}</option>)
+                    }
+                </datalist>
             </div> : inputType === "checkbox" ? <div className="policy">
                 <input {...props.register(name, require)} type="checkbox" required />
                 <h3 className="h3">I accept all terms & condition</h3>

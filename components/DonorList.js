@@ -7,8 +7,6 @@ const DonorList = (props) => {
     useEffect(() => {
         if (!props.user.displayName) {
             router.push('/')
-            // router.push("/")
-            // return <h1>Page Not Found</h1>;
         }
     }, [])
     return (

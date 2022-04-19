@@ -24,7 +24,7 @@ const InputFiled = (props) => {
                 <h3 className="h3">I accept all terms & condition</h3>
             </div> : inputType === "submit" ?
                 <div className="input__box button">
-                    <input className="input" type={loading ? "Loading..." : "Signup"} defaultValue="Register Now" />
+                    <input className="input" type="submit" disabled={loading ? true : false} value={loading ? "Loading..." : "Signup"} />
                 </div> :
                 ""
 };

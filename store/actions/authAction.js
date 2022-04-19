@@ -9,7 +9,7 @@ import {
     signOut,
     updateProfile,
 } from "firebase/auth";
-export const registerAction = ({ name, email, password, ...rest }, router) => async dispatch => {
+export const registerAction = ({ name, email, password, ...rest }, router, setLoading) => async dispatch => {
     try {
         const auth = getAuth();
         const db = getFirestore();
@@ -25,8 +25,8 @@ export const registerAction = ({ name, email, password, ...rest }, router) => as
             });
         };
         await signup();
+        setLoading(false)
         router.push('/login')
-
     } catch (err) {
         dispatch({
             type: Types.SET_ALERT,
@@ -39,34 +39,6 @@ export const loginAction = ({ email, password }, history) => async dispatch => {
     try {
         const auth = getAuth();
         const user = await signInWithEmailAndPassword(auth, email, password);
-        console.log(user);
-        history.push("/donor")
-        // console.log(user.user);
-        // const unsubscribe = onAuthStateChanged(auth, (user) => {
-        //     setCurrentUser(user);
-        //     setLoading(false);
-        // });
-        // const token = result.data.token;
-        // if (token) {
-        //     localStorage.setItem('token', token)
-        //     setAuthHeader(token)
-        // }
-        // if (result.data.error) return dispatch({
-        //     type: Types.SET_ALERT,
-        //     payload: {
-        //         message: result.data.message,
-        //         error: true
-        //     }
-        // })
-        // dispatch({
-        //     type: Types.SET_ALERT,
-        //     payload: {
-        //         message: result.data.message,
-        //         error: result.data.error
-        //     }
-        // })
-
-        // history.push('/');
         const { displayName, uid } = user.user || {};
         dispatch({
             type: Types.SET_USER,
@@ -76,8 +48,11 @@ export const loginAction = ({ email, password }, history) => async dispatch => {
                 },
             }
         })
+        history.push("/donor")
+        localStorage.setItem("user", JSON.stringify({
+            displayName, email, uid
+        }))
     } catch (error) {
-        console.log(error);
         // dispatch({
         //     type: Types.SET_ALERT,
         //     payload: {
@@ -91,6 +66,7 @@ export const loginAction = ({ email, password }, history) => async dispatch => {
 export const logoutAction = () => dispatch => {
     const auth = getAuth();
     signOut(auth);
+    localStorage.removeItem("user");
     dispatch({
         type: Types.SET_USER,
         payload: {

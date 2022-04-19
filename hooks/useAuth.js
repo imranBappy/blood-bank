@@ -6,27 +6,24 @@ import {
     onAuthStateChanged,
 } from "firebase/auth"
 const useAuth = () => {
-    const [user, setUser] = useState([]);
+    const [user, setUser] = useState(null);
     const auth = getAuth();
     const db = getFirestore();
     useEffect(() => {
-        const getUser = async () => {
-            let data = {}
-            const unsubscribe = onAuthStateChanged(auth, async (user) => {
-                // const { accessToken, displayName, email, uid } = user;
-                // data = { accessToken, displayName, email, uid }
-                // const stateQuery = query(collection(db, "users"), where("_id", "==", uid));
-                // const docSnap = await getDocs(stateQuery);
-                // docSnap.forEach(u => {
-                //     data = { ...data, ...u.data() }
-                // })
-                setUser(user)
+        const unsubscribe = onAuthStateChanged(auth, async (getUser) => {
+            const { displayName, email, uid } = getUser || {};
+            // data = { accessToken, displayName, email, uid }
+            // const stateQuery = query(collection(db, "users"), where("_id", "==", uid));
+            // const docSnap = await getDocs(stateQuery);
+            // docSnap.forEach(u => {
+            //     data = { ...data, ...u.data() }
+            // })
+            setUser({ displayName, email, uid })
+            // console.log("first line", getUser);
 
-                return unsubscribe
-            });
-        };
-        getUser();
+        });
     }, []);
+    // console.log('lest line', user);
     return user;
 };
 

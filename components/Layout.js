@@ -5,7 +5,6 @@ import Footer from './Footer'
 import Navbar from './Navbar'
 // import '../styles/globals.css'
 export const LoadContext = createContext()
-
 export default function Layout({ title, addClass, children, ...rest }) {
     const [loading, setLoading] = useState(false)
     return (

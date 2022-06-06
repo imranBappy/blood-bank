@@ -21,14 +21,14 @@ const DonorSearch = (props) => {
                 aria-label="Default select example"
               >
                 <option selected>Choose Blood Group...</option>
-                <option value="A+">A+</option>
-                <option value="A-">A-</option>
-                <option value="B+">B+</option>
-                <option value="B-">B-</option>
-                <option value="O+">O+</option>
-                <option value="O-">O-</option>
-                <option value="AB+">AB+</option>
-                <option value="AB-">AB-</option>
+                <option defaultValue="A+">A+</option>
+                <option defaultValue="A-">A-</option>
+                <option defaultValue="B+">B+</option>
+                <option defaultValue="B-">B-</option>
+                <option defaultValue="O+">O+</option>
+                <option defaultValue="O-">O-</option>
+                <option defaultValue="AB+">AB+</option>
+                <option defaultValue="AB-">AB-</option>
               </select>
             </div>
             <div className=" col-md-4">

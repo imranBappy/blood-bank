@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { useRouter } from "next/router";
+import Donor from "./Donor";
+import { loadDonor } from "../store/actions/donorAction";
+
 const DonorList = (props) => {
   const router = useRouter();
   useEffect(() => {
@@ -8,6 +11,9 @@ const DonorList = (props) => {
       router.push("/");
     }
   }, [props.user.displayName, router]);
+  useEffect(() => {
+    props.loadDonor();
+  }, [props]);
   return (
     <>
       <table className={`table table-dark table-striped`}>
@@ -20,12 +26,17 @@ const DonorList = (props) => {
             <th scope="col">Address</th>
           </tr>
         </thead>
-        <tbody>{props.children}</tbody>
+        <tbody>
+          {props.donor.map((d, i) => (
+            <Donor donor={d} key={i} id={i} />
+          ))}
+        </tbody>
       </table>
     </>
   );
 };
 const mapStateToProps = (state) => ({
   user: state.auth.user,
+  donor: state.donor,
 });
-export default connect(mapStateToProps)(DonorList);
+export default connect(mapStateToProps, { loadDonor })(DonorList);

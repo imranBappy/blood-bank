@@ -1,5 +1,6 @@
 import alertReducer from "./alertReducer";
 import authReducer from "./authReducer";
+import donorReducer from "./donorReducer";
 // import clubReducer from "./clubReducer";
 // import gameReducer from './gameReducer';
 // import betReducer from './betReducer';
@@ -9,7 +10,8 @@ import authReducer from "./authReducer";
 const { combineReducers } = require("redux");
 
 const reducer = combineReducers({
-    auth: authReducer,
-    alert: alertReducer
-})
-export default reducer
+  auth: authReducer,
+  alert: alertReducer,
+  donor: donorReducer,
+});
+export default reducer;

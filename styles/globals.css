@@ -149,9 +149,15 @@ form .input__box .input {
 
 
 
+/* donor__container */
+ .donor__container {
+     min-width: 780px;
+ }
+@media only screen and (max-width: 780px) {
 
-
-
+   
+   
+}
 
 
 
@@ -259,4 +265,15 @@ form .input__box .input {
 
 .signup .a:hover {
     text-decoration: underline;
+}
+
+/* donor__wrapper */
+@media screen and (max-width: 788px) {
+    .donor__wrapper {
+            width: 100%;
+            overflow: scroll;
+        }
+        .search__container>div{
+            margin-bottom: 10px;
+        }
 }

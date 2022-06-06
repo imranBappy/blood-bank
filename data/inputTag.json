@@ -50,7 +50,7 @@
             "required": true
         },
         "option": [
-            "Choose...",
+            "Choose Division...",
             "Khulna",
             "Barisal"
         ]
@@ -63,7 +63,7 @@
             "required": true
         },
         "option": [
-            "Choose...",
+            "Choose zila...",
             "Pirojpur",
             "Bola"
         ]
@@ -76,7 +76,7 @@
             "required": true
         },
         "option": [
-            "Choose...",
+            "Choose Upazila...",
             "Mathbaria",
             "Bandaria"
         ]
@@ -88,7 +88,7 @@
             "required": true
         },
         "option": [
-            "Choose..",
+            "Choose Gender..",
             "Male",
             "Female"
         ]

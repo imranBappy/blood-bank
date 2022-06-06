@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import { connect } from 'react-redux';
 import { logoutAction } from '../store/actions/authAction';
+import styles from '../styles/Home.module.css'
 const Navbar = (props) => {
     const { displayName } = props.user || {}
     const logout = () => {
@@ -9,25 +10,26 @@ const Navbar = (props) => {
     }
     return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <nav className="navbar navbar-expand-lg navbar-dark navbar-dark bg-dark">
                 <div className="container">
                     <Link href="/">
-                        <a className="navbar-brand" >Navbar</a>
+                        <a className="navbar-brand" > Blood Bank </a>
                     </Link>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div className="collapse navbar-collapse" id="navbarNav">
-                        <ul className="navbar-nav">
+                    <div
+                        className={`collapse navbar-collapse ${styles.nav__left}`} id="navbarScroll">
+                        <ul
+                            className={`navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll ${styles.m__r0}`}>
                             <li className="nav-item">
-                                <Link href="/donor">
-                                    <a className="nav-link">Donor</a>
+                                <Link href={props.user.displayName ? "/donor" : "/login"}>
+                                    <a className="nav-link active" >Donor</a>
                                 </Link>
                             </li>
+
                             <li className="nav-item">
-                                <Link href="/blogs">
-                                    <a className="nav-link">Blogs</a>
-                                </Link>
+                                <a className="nav-link" href="#">Blog</a>
                             </li>
                             <li className="nav-item">
                                 {props.user.displayName ? <Link href="/">
@@ -41,6 +43,7 @@ const Navbar = (props) => {
                     </div>
                 </div>
             </nav>
+            <br />
         </>
     );
 };

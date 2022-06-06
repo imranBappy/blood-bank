@@ -1,6 +1,15 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Andada+Pro:ital,wght@0,600;1,800&display=swap');
+
+.taka {
+    font-family: 'Andada Pro', serif;
+    font-weight: border;
+    font-size: 25px
+}
+
+.nav__left {
+    justify-content: flex-end
+}
+
+.m__r0 {
+    margin-right: 0px !important
 }

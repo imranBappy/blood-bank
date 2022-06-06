@@ -13,7 +13,7 @@ const DonorList = (props) => {
   }, [props.user.displayName, router]);
   useEffect(() => {
     props.loadDonor();
-  }, [props]);
+  }, []);
   return (
     <>
       <table className={`table table-dark table-striped`}>

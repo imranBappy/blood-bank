@@ -10,8 +10,8 @@ const Card = (props) => {
   return (
     <>
       <div className="row mt-5">
-        {props.donor.map((d) => (
-          <div className="col-md-4 col-sm-12">
+        {props.donor.map((d, i) => (
+          <div key={i} className="col-md-4 col-sm-12">
             <div className="card">
               <img
                 src="/images/profile.png"
@@ -21,8 +21,7 @@ const Card = (props) => {
               <div className="card-body">
                 <h5 className="card-title">{d.name}</h5>
                 <p className="card-text">
-                  {" "}
-                  {`${d.upazila}, ${d.zila}, ${d.division}`}{" "}
+                  {`${d.upazila}, ${d.zila}, ${d.division}`}
                 </p>
                 <a className="btn btn-primary">Go somewhere</a>
               </div>

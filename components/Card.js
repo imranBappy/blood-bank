@@ -4,7 +4,7 @@ import { loadDonor } from "../store/actions/donorAction";
 
 const Card = (props) => {
   useEffect(() => {
-    props.loadDonor(2);
+    props.loadDonor(3);
   }, []);
 
   return (

@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import { registerAction } from "../store/actions/authAction";
 import Link from "next/link";
 import InputFiled from "./InputFiled";
-import { set, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/router";
 import * as Yup from "yup";
@@ -67,10 +67,10 @@ const SignupForm = (props) => {
     }
   };
   const onSubmit = (data) => {
+    setLoading(true);
     delete data.confirmPassword;
     delete data.agreed;
     props.registerAction(data, router, setLoading);
-    setLoading(false);
   };
   return (
     <div className="wrapper">

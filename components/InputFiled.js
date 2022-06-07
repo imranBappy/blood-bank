@@ -28,7 +28,7 @@ const InputFiled = (props) => {
       >
         {props.option.map((op, i) => (
           <option key={i} className="option" value={i === 0 ? "" : op.id}>
-            {op.name}
+            {`${op.bn_name} ${op.name}`}
           </option>
         ))}
       </select>

@@ -12,7 +12,6 @@ import {
 export const registerAction =
   ({ name, email, password, ...rest }, router, setLoading) =>
   async (dispatch) => {
-    setLoading(true);
     try {
       const auth = getAuth();
       const db = getFirestore();
@@ -30,7 +29,7 @@ export const registerAction =
         });
       };
       await signup();
-
+      setLoading(false);
       router.push("/donor");
     } catch (err) {
       console.log();

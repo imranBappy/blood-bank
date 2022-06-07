@@ -19,7 +19,7 @@ export default function Home() {
     },
     {
       key: "12414215sdfewf",
-      img: "https://template79832.motopreview.com/mt-demo/79800/79832/mt-content/uploads/2019/04/mt-1802-slider-img01.jpg",
+      img: "/images/slider3.jpg",
       title: "First slide label",
       body: "Some representative placeholder content for the first slide.",
       alt: "blood bank",
@@ -27,12 +27,12 @@ export default function Home() {
   ];
   return (
     <Layout title="Welcome to my app">
+      <br />
       <div
         id="carouselExampleDark"
         className="carousel carousel-dark slide"
         data-bs-ride="carousel"
       >
-        <br />
         <div className="carousel-indicators">
           <button
             type="button"

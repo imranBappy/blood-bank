@@ -35,10 +35,20 @@ const Navbar = (props) => {
             >
               <li className="nav-item">
                 <Link href={props.user.displayName ? "/donor" : "/login"}>
-                  <a className="nav-link active">Donor</a>
+                  <a className="nav-link active">Donar</a>
                 </Link>
               </li>
 
+              {props.user.displayName ? (
+                ""
+              ) : (
+                <li className="nav-item">
+                  {" "}
+                  <Link href="/login">
+                    <a className="nav-link">Donate</a>
+                  </Link>
+                </li>
+              )}
               <li className="nav-item">
                 {props.user.displayName ? (
                   <Link href="/">

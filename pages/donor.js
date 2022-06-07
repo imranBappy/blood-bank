@@ -5,12 +5,15 @@ const donor = () => {
   return (
     <>
       <Layout title="Blood Bank">
+        <br />
+
         <DonorSearch />
         <div className="donor__wrapper">
           <div className="donor__container">
             <DonorList />
           </div>
         </div>
+        <br />
       </Layout>
     </>
   );

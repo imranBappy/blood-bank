@@ -16,6 +16,9 @@
 .navbar__container {
     background-color: #212529 !important;
     border-bottom: 4px solid #8a0303;
+    box-shadow: 1px 10px 42px -9px rgba(0, 0, 0, 0.72);
+        -webkit-box-shadow: 1px 10px 42px -9px rgba(0, 0, 0, 0.72);
+        -moz-box-shadow: 1px 10px 42px -9px rgba(0, 0, 0, 0.72);
 }
 .navbar-brand {
     color: #970a0a !important;
@@ -35,7 +38,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('/images/signup_bg.jpg');
+    background-image: url('/images/red-blood-cells.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -192,7 +195,7 @@ form .input__box .input {
     color: #fff;
     /* padding-left: 20px; */
     border-radius: 5px 5px 0 0;
-    font-size: 25px;
+    font-size: 1.3rem;
     font-weight: 600;
     text-align: center;
 }

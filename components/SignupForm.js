@@ -2,12 +2,15 @@ import { connect } from "react-redux";
 import { registerAction } from "../store/actions/authAction";
 import Link from "next/link";
 import InputFiled from "./InputFiled";
-import { useForm } from "react-hook-form";
+import { set, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/router";
 import * as Yup from "yup";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { LoadContext } from "./Layout";
+import allDivision from "../data/allDivision.json";
+import allZila from "../data/allZila.json";
+import allUpaZila from "../data/allUpaZila.json";
 
 const SignupForm = (props) => {
   const router = useRouter();
@@ -32,7 +35,37 @@ const SignupForm = (props) => {
     handleSubmit,
     formState: { errors },
   } = useForm(formOptions);
+  const [divisions, setDivisions] = useState([
+    { id: "0", name: "Choose Division...", bn_name: "" },
+  ]);
+  const [zila, setZila] = useState([
+    { id: "0", division_id: "0", name: " Choose zila...", bn_name: "" },
+  ]);
+  const [upzila, setUpzila] = useState([
+    {
+      id: "0",
+      district_id: "",
+      name: "Choose Upazila...",
+      bn_name: "",
+    },
+  ]);
 
+  useEffect(() => {
+    setDivisions([...divisions, ...allDivision]);
+    setZila([...zila, ...allZila]);
+    setUpzila([...upzila, ...allUpaZila]);
+  }, []);
+  const handleAddress = (div) => {
+    if (div.target.name === "division") {
+      const findZila = zila.filter((z) => z.division_id === div.target.value);
+      setZila([zila[0], ...findZila]);
+    } else if (div.target.name === "zila") {
+      const findUpzila = upzila.filter(
+        (z) => z.district_id === div.target.value
+      );
+      setUpzila([upzila[0], ...findUpzila]);
+    }
+  };
   const onSubmit = (data) => {
     delete data.confirmPassword;
     delete data.agreed;
@@ -43,9 +76,53 @@ const SignupForm = (props) => {
     <div className="wrapper">
       <h2 className="h2">Registration</h2>
       <form className="form" onSubmit={handleSubmit(onSubmit)}>
-        {props.inputFled.map((data, i) => (
-          <InputFiled key={i} data={data} register={register} errors={errors} />
-        ))}
+        {props.inputFled.map((data, i) => {
+          if (data.inputType === "address") {
+            if (data.name === "division") {
+              return (
+                <InputFiled
+                  option={divisions}
+                  key={i}
+                  data={data}
+                  register={register}
+                  errors={errors}
+                  handleAddress={handleAddress}
+                />
+              );
+            } else if (data.name === "zila") {
+              return (
+                <InputFiled
+                  handleAddress={handleAddress}
+                  option={zila}
+                  key={i}
+                  data={data}
+                  register={register}
+                  errors={errors}
+                />
+              );
+            } else if (data.name === "upazila") {
+              return (
+                <InputFiled
+                  option={upzila}
+                  key={i}
+                  data={data}
+                  register={register}
+                  errors={errors}
+                />
+              );
+            }
+          } else {
+            return (
+              <InputFiled
+                option={[]}
+                key={i}
+                data={data}
+                register={register}
+                errors={errors}
+              />
+            );
+          }
+        })}
         <div className="text">
           <h3 className="h3">
             Already have an account?{" "}

@@ -43,20 +43,18 @@
         }
     },
     {
-        "inputType": "select",
+        "inputType": "address",
         "name": "division",
         "placeholder": "Enter your division",
         "require": {
             "required": true
         },
         "option": [
-            "Choose Division...",
-            "Khulna",
-            "Barisal"
+            "Choose Division..."
         ]
     },
     {
-        "inputType": "select",
+        "inputType": "address",
         "name": "zila",
         "placeholder": "Enter your District",
         "require": {
@@ -69,7 +67,7 @@
         ]
     },
     {
-        "inputType": "select",
+        "inputType": "address",
         "name": "upazila",
         "placeholder": "Enter your Upazila",
         "require": {
@@ -90,7 +88,8 @@
         "option": [
             "Choose Gender..",
             "Male",
-            "Female"
+            "Female",
+            "BTS","Other"
         ]
     },
     {
@@ -102,7 +101,13 @@
         "option": [
             "Choose Blood Group..",
             "A+",
-            "B+"
+            "A-",
+            "B+",
+            "B+",
+            "O+",
+            "O-",
+            "AB+",
+            "AB-"
         ]
     },
     {

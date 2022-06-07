@@ -18,6 +18,21 @@ const InputFiled = (props) => {
         </p>
       )}
     </div>
+  ) : inputType === "address" ? (
+    <div className="input__box">
+      <select
+        {...props.register(name, require)}
+        onChange={props.handleAddress}
+        className="select"
+        required
+      >
+        {props.option.map((op, i) => (
+          <option key={i} className="option" value={i === 0 ? "" : op.id}>
+            {op.name}
+          </option>
+        ))}
+      </select>
+    </div>
   ) : inputType === "select" ? (
     <div className="input__box">
       <select {...props.register(name, require)} className="select" required>
@@ -27,34 +42,6 @@ const InputFiled = (props) => {
           </option>
         ))}
       </select>
-
-      {/* <input
-        placeholder={props.data.placeholder}
-        className="input"
-        {...props.register(name, require)}
-        list={props.data.name}
-        name={props.data.name}
-        id={props.data.name}
-      /> */}
-      {/* <select
-        id={props.data.name}
-        {...props.register(name, require)}
-        className="select"
-        required
-      >
-        {option.map((op, i) => (
-          <option key={i} className="option" value={i === 0 ? "" : op}>
-            {op}
-          </option>
-        ))}
-      </select> */}
-      {/* <datalist id={props.data.name} {...props.register(name, require)}>
-        {option.map((op, i) => (
-          <option key={i} className="option" value={op}>
-            {op}
-          </option>
-        ))}
-      </datalist> */}
     </div>
   ) : inputType === "checkbox" ? (
     <div className="policy">

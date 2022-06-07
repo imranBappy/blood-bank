@@ -115,8 +115,7 @@ export default function Home() {
       <br />
 
       <h2 align="center" className="new__donor">
-        {" "}
-        <span>New {`Donor's`}</span>{" "}
+        <span>New Donor</span>
       </h2>
 
       <Card />

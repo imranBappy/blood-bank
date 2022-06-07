@@ -27,7 +27,7 @@ export default function Home() {
     },
   ];
   return (
-    <Layout title="Welcome to my app">
+    <Layout title="Online Blood Bank">
       <br />
       <div
         id="carouselExampleDark"

@@ -13,9 +13,17 @@
 /* .bg-dark {
     background-color: #8a0303 !important;
 } */
-.bg-dark {
+.navbar__container {
     background-color: #212529 !important;
     border-bottom: 4px solid #8a0303;
+}
+.navbar-brand {
+    color: #970a0a !important;
+    font-weight: bold;
+}
+.nav-link{
+    color: #970a0a !important;
+    font-weight: bold;
 }
 .error {
     color: rgb(211, 0, 0);

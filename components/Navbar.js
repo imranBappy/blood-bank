@@ -10,7 +10,7 @@ const Navbar = (props) => {
   };
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark navbar-dark bg-dark">
+      <nav className="navbar navbar__container navbar-expand-lg navbar-dark navbar-dark bg-dark">
         <div className="container">
           <Link href="/">
             <a className="navbar-brand"> Blood Bank </a>

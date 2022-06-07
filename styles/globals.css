@@ -47,7 +47,12 @@
     color: rgb(211, 0, 0);
     margin-top: -4px;
 }
-
+.new__donor>span{
+    border-bottom: 4px solid #970a0a;
+    display: inline-block;
+    padding:10px;
+    border-radius:5px;
+}
 .body {
     min-height: 100vh;
     display: flex;

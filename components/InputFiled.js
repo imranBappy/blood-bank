@@ -60,7 +60,7 @@ const InputFiled = (props) => {
         className="input"
         type="submit"
         disabled={loading ? true : false}
-        value={loading ? "Loading..." : "Signup"}
+        defaultValue={loading ? "Loading..." : "Signup"}
       />
     </div>
   ) : (

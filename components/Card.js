@@ -19,11 +19,10 @@ const Card = (props) => {
                 alt="blood bonor"
               />
               <div className="card-body">
-                <h5 className="card-title">{d.name}</h5>
+                <h5 className="card-title">{d.name} </h5>
                 <p className="card-text">
                   {`${d.upazila}, ${d.zila}, ${d.division}`}
                 </p>
-                <a className="btn btn-primary">Go somewhere</a>
               </div>
             </div>
           </div>

@@ -111,8 +111,15 @@ export default function Home() {
           <span className="visually-hidden">Next</span>
         </button>
       </div>
-      <Card />
+      <br />
+      <br />
 
+      <h2 align="center" className="new__donor">
+        {" "}
+        <span>New {`Donor's`}</span>{" "}
+      </h2>
+
+      <Card />
       <br />
     </Layout>
   );

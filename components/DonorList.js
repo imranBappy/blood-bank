@@ -12,7 +12,7 @@ const DonorList = (props) => {
     }
   }, [props.user.displayName, router]);
   useEffect(() => {
-    props.loadDonor();
+    props.loadDonor(3);
   }, []);
   return (
     <>

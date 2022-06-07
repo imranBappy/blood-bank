@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Card from "../components/Card";
 import Layout from "../components/Layout";
 
 export default function Home() {
@@ -57,7 +58,7 @@ export default function Home() {
         </div>
         <div className="carousel-inner">
           <div className="carousel-item active" data-bs-interval="10000">
-            <img src={slider[0].img} className="d-block w-100" alt="..." />
+            <img src={slider[0].img} className="d-block w-100" alt="donor" />
             <div className="carousel-caption d-none d-md-block">
               <h5>First slide label</h5>
               <p>
@@ -110,59 +111,8 @@ export default function Home() {
           <span className="visually-hidden">Next</span>
         </button>
       </div>
-      <div className="row mt-5">
-        <div className="col-md-4 col-sm-12">
-          <div className="card">
-            <img
-              src="https://template79832.motopreview.com/mt-demo/79800/79832/mt-content/uploads/2019/04/mt-1802-home-img01.jpg"
-              className="card-img-top"
-              alt="..."
-            />
-            <div className="card-body">
-              <h5 className="card-title">Card title</h5>
-              <p className="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the cards content.
-              </p>
-              <a className="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-4 col-sm-12">
-          <div className="card">
-            <img
-              src="https://template79832.motopreview.com/mt-demo/79800/79832/mt-content/uploads/2019/04/mt-1802-home-img01.jpg"
-              className="card-img-top"
-              alt="..."
-            />
-            <div className="card-body">
-              <h5 className="card-title">Card title</h5>
-              <p className="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the cards content.
-              </p>
-              <a className="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-4 col-sm-12">
-          <div className="card">
-            <img
-              src="https://template79832.motopreview.com/mt-demo/79800/79832/mt-content/uploads/2019/04/mt-1802-home-img01.jpg"
-              className="card-img-top"
-              alt="..."
-            />
-            <div className="card-body">
-              <h5 className="card-title">Card title</h5>
-              <p className="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the cards content.
-              </p>
-              <a className="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Card />
+
       <br />
     </Layout>
   );

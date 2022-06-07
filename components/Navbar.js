@@ -35,7 +35,7 @@ const Navbar = (props) => {
             >
               <li className="nav-item">
                 <Link href={props.user.displayName ? "/donor" : "/login"}>
-                  <a className="nav-link active">Donar</a>
+                  <a className="nav-link active">Donor</a>
                 </Link>
               </li>
 

@@ -24,6 +24,21 @@
     color: #970a0a !important;
     font-weight: bold;
 }
+.card{
+    border: none !important;
+    display: flex !important;
+    align-items: center !important;
+}
+.card>img{
+    width: 350px !important;
+    border-radius:50%;
+    border: 10px solid #970a0a;
+    box-shadow: 1px 4px 42px -9px #970a0a;
+}
+.card-title{
+    color: #940303 !important;
+    font-weight: bold;
+}
 .nav-link{
     color: #970a0a !important;
     font-weight: bold;

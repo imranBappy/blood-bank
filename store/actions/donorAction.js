@@ -9,12 +9,13 @@ import {
   limit,
 } from "firebase/firestore";
 
-export const loadDonor = () => async (dispatch) => {
+export const loadDonor = (l) => async (dispatch) => {
   try {
+    console.log(l);
     const users = [];
     const db = getFirestore();
     const userLoad = async () => {
-      const q = query(collection(db, "users"), limit(25));
+      const q = query(collection(db, "users"), limit(l));
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
         users.push(doc.data());

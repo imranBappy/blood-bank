@@ -30,7 +30,7 @@ const InputFiled = (props) => {
           <option
             key={i}
             className="option"
-            value={i === 0 ? "" : JSON.stringify(op)}
+            defaultValue={i === 0 ? "" : JSON.stringify(op)}
           >
             {`${op.bn_name} ${op.name}`}
           </option>

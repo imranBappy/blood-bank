@@ -8,6 +8,15 @@
     font-family: 'Poppins', sans-serif;
 }
 
+
+/* coverwite code */
+/* .bg-dark {
+    background-color: #8a0303 !important;
+} */
+.bg-dark {
+    background-color: #212529 !important;
+    border-bottom: 4px solid #8a0303;
+}
 .error {
     color: rgb(211, 0, 0);
     margin-top: -4px;

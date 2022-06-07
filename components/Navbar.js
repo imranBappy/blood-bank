@@ -40,11 +40,6 @@ const Navbar = (props) => {
               </li>
 
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Blog
-                </a>
-              </li>
-              <li className="nav-item">
                 {props.user.displayName ? (
                   <Link href="/">
                     <a className="nav-link">

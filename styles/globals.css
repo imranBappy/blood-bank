@@ -71,11 +71,11 @@ form .input__box .input {
     font-size: 17px;
     font-weight: 400;
     color: #000;
-    border: 1.5px solid #C7BEBE;
     border-bottom-width: 2.5px;
     border-radius: 6px;
     transition: all 0.3s ease;
     background: aliceblue;
+        border: none;
 }
 
 .input__box .input:focus,
@@ -86,8 +86,12 @@ form .input__box .input {
 .form .policy {
     display: flex;
     align-items: center;
+    justify-content:left;
 }
-
+.form .policy>h3{
+    margin: 0px 0px 0px 10px;
+    padding: 0;
+}
 .form .h3 {
     color: #fff;
     font-size: 14px;
@@ -127,11 +131,10 @@ form .input__box .input {
     width: 100%;
     background: aliceblue;
     border-radius: 5px;
-    border: 2px solid rgba(112, 112, 112, 0.40);
     font-weight: 500;
     font-size: 17px;
-    color: #000;
-
+    font-weight: 100;
+    padding: 0px 10px;
 }
 
 .select .option {
@@ -139,10 +142,11 @@ form .input__box .input {
     font-weight: 500;
     font-size: 17px;
 }
-
+.select:focus-visible,
 .select:focus,
 .select .option:valid {
-    border-color: #ff0000;
+    border:none;
+    outline: none;
 }
 
 /* login */
@@ -153,12 +157,9 @@ form .input__box .input {
  .donor__container {
      min-width: 780px;
  }
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: 400px) {
 
-   
-   
 }
-
 
 
 .wrapper {
@@ -172,7 +173,7 @@ form .input__box .input {
     line-height: 50px;
     background: rgb(227, 6, 6);
     color: #fff;
-    padding-left: 20px;
+    /* padding-left: 20px; */
     border-radius: 5px 5px 0 0;
     font-size: 25px;
     font-weight: 600;
@@ -180,7 +181,7 @@ form .input__box .input {
 }
 
 .form {
-    padding: 30px 25px 25px 25px;
+    padding: 52px 0px;
 }
 
 .input_row {
@@ -192,12 +193,12 @@ form .input__box .input {
 .row__input {
     height: 100%;
     width: 100%;
-    text-align: center;
     border-radius: 5px;
     outline: none;
     border: 1px solid rgb(99, 90, 90);
     font-size: 16px;
     transition: all 0.3s ease;
+    padding: 10px;
 }
 
 .row__input:focus {
@@ -246,6 +247,7 @@ form .input__box .input {
     color: #fff;
     text-decoration: none;
     font-size: 17px;
+    padding: 0px 5px;
 }
 
 .pass .a:hover {
@@ -254,11 +256,12 @@ form .input__box .input {
 
 .signup {
     margin-top: 20px;
-    text-align: center;
+    color: #fff;
+    padding:10px;
 }
 
 .signup .a {
-    color: #fff;
+   
     text-decoration: none;
     font-size: 17px;
 }

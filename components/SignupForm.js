@@ -14,6 +14,7 @@ import allUpaZila from "../data/allUpaZila.json";
 
 const SignupForm = (props) => {
   const router = useRouter();
+  const [selected, serSelected] = useState(false);
   const [, setLoading] = useContext(LoadContext);
   const formSchema = Yup.object().shape({
     age: Yup.number()
@@ -56,20 +57,23 @@ const SignupForm = (props) => {
     setUpzila([...upzila, ...allUpaZila]);
   }, []);
   const handleAddress = (div) => {
+    let id = JSON.parse(div.target.value).id;
     if (div.target.name === "division") {
-      const findZila = zila.filter((z) => z.division_id === div.target.value);
+      const findZila = zila.filter((z) => z.division_id === id);
       setZila([zila[0], ...findZila]);
     } else if (div.target.name === "zila") {
-      const findUpzila = upzila.filter(
-        (z) => z.district_id === div.target.value
-      );
+      const findUpzila = upzila.filter((z) => z.district_id === id);
       setUpzila([upzila[0], ...findUpzila]);
     }
   };
+
   const onSubmit = (data) => {
     setLoading(true);
     delete data.confirmPassword;
     delete data.agreed;
+    data.division = JSON.parse(data.division).name;
+    data.zila = JSON.parse(data.zila).name;
+    data.upazila = JSON.parse(data.upazila).name;
     props.registerAction(data, router, setLoading);
   };
   return (
@@ -124,12 +128,12 @@ const SignupForm = (props) => {
           }
         })}
         <div className="text">
-          <h3 className="h3">
-            Already have an account?{" "}
+          <div className="signup">
+            Already have an account?
             <Link href="/login">
               <a className="a">Login now</a>
-            </Link>{" "}
-          </h3>
+            </Link>
+          </div>
         </div>
       </form>
     </div>

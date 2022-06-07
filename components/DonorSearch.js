@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { searchDonor } from "../store/actions/donorAction";
 import { connect } from "react-redux";
+import allUpazila from "../data/allUpaZila.json";
 const DonorSearch = (props) => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
@@ -31,21 +32,24 @@ const DonorSearch = (props) => {
                 <option defaultValue="AB-">AB-</option>
               </select>
             </div>
-            <div className=" col-md-4">
+            <div className=" col-md-4 ">
               <input
+                list="browsers"
+                name="adddress"
                 {...register("adddress")}
-                className="form-control"
-                list="datalistOptions"
-                id="upazila"
+                className="form-control custom-select custom-select"
+                id="adddress"
                 placeholder="Type your Upazila ..."
               />
-              {/* {allUpaZila.map((u, i) => {
-                return <option style={{ display: "none" }} key={i} value={u} />;
-              })} */}
+              <datalist id="browsers">
+                {allUpazila.map((u) => (
+                  <option key={u.id} value={u.name} />
+                ))}
+              </datalist>
             </div>
             <div className=" col-md-4">
               <input
-                value="Secarch"
+                value="Filter"
                 className="form-control bd-dark"
                 type="submit"
               />

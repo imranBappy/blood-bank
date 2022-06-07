@@ -27,7 +27,11 @@ const InputFiled = (props) => {
         required
       >
         {props.option.map((op, i) => (
-          <option key={i} className="option" value={i === 0 ? "" : op.id}>
+          <option
+            key={i}
+            className="option"
+            value={i === 0 ? "" : JSON.stringify(op)}
+          >
             {`${op.bn_name} ${op.name}`}
           </option>
         ))}
@@ -46,7 +50,9 @@ const InputFiled = (props) => {
   ) : inputType === "checkbox" ? (
     <div className="policy">
       <input {...props.register(name, require)} type="checkbox" required />
-      <h3 className="h3">I accept all terms & condition</h3>
+      <h3 className="h3">
+        I accept all <a href="">terms</a> & <a href="">condition</a>
+      </h3>
     </div>
   ) : inputType === "submit" ? (
     <div className="input__box button">

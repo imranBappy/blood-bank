@@ -32,6 +32,7 @@ export default function Home() {
         className="carousel carousel-dark slide"
         data-bs-ride="carousel"
       >
+        <br />
         <div className="carousel-indicators">
           <button
             type="button"
@@ -110,7 +111,7 @@ export default function Home() {
         </button>
       </div>
       <div className="row mt-5">
-        <div className="col">
+        <div className="col-md-4 col-sm-12">
           <div className="card">
             <img
               src="https://template79832.motopreview.com/mt-demo/79800/79832/mt-content/uploads/2019/04/mt-1802-home-img01.jpg"
@@ -127,7 +128,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="col">
+        <div className="col-md-4 col-sm-12">
           <div className="card">
             <img
               src="https://template79832.motopreview.com/mt-demo/79800/79832/mt-content/uploads/2019/04/mt-1802-home-img01.jpg"
@@ -144,7 +145,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="col">
+        <div className="col-md-4 col-sm-12">
           <div className="card">
             <img
               src="https://template79832.motopreview.com/mt-demo/79800/79832/mt-content/uploads/2019/04/mt-1802-home-img01.jpg"
@@ -162,6 +163,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <br />
     </Layout>
   );
 }

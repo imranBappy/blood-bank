@@ -53,6 +53,12 @@
     padding:10px;
     border-radius:5px;
 }
+.card-body>div{
+    line-height:0.5;
+}
+.card-body>h5{
+    margin-bottom: 22px;
+}
 .body {
     min-height: 100vh;
     display: flex;

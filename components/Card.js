@@ -20,9 +20,18 @@ const Card = (props) => {
               />
               <div className="card-body">
                 <h5 className="card-title">{d.name} </h5>
-                <p className="card-text">
-                  {`${d.upazila}, ${d.zila}, ${d.division}`}
-                </p>
+                <div>
+                  {" "}
+                  <p className="">
+                    <b>Blood Group:</b> {`${d.blood}`}
+                  </p>
+                  <p className="">
+                    <b>Phone Number:</b> {`+8801700000000`}
+                  </p>
+                  <p className="">
+                    <b>Address:</b> {`${d.upazila}, ${d.zila}, ${d.division}`}
+                  </p>
+                </div>
               </div>
             </div>
           </div>

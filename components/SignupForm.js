@@ -57,12 +57,13 @@ const SignupForm = (props) => {
     setUpzila([...upzila, ...allUpaZila]);
   }, []);
   const handleAddress = (div) => {
-    let id = JSON.parse(div.target.value).id;
+    let id = div.target.value ? JSON.parse(div.target.value).id : "";
     if (div.target.name === "division") {
-      const findZila = zila.filter((z) => z.division_id === id);
+      const findZila = allZila.filter((z) => z.division_id === id);
+      console.log({ findZila });
       setZila([zila[0], ...findZila]);
     } else if (div.target.name === "zila") {
-      const findUpzila = upzila.filter((z) => z.district_id === id);
+      const findUpzila = allUpaZila.filter((z) => z.district_id === id);
       setUpzila([upzila[0], ...findUpzila]);
     }
   };

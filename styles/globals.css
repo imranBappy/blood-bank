@@ -30,10 +30,19 @@
     align-items: center !important;
 }
 .card>img{
-    width: 350px !important;
+    max-width: 350px !important;
     border-radius:50%;
     border: 10px solid #970a0a;
     box-shadow: 1px 4px 42px -9px #970a0a;
+}
+.card>img {
+    max-width: 350px !important;
+    border-radius: 50%;
+    border: 10px solid #970a0a;
+    box-shadow: 1px 4px 42px -9px #970a0a;
+}
+@media screen and(min-width: 768px) {
+
 }
 .card-title{
     color: #940303 !important;
